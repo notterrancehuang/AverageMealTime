@@ -10,6 +10,19 @@ class MyTime:
         self.minute = minute
 
     @classmethod
+    def convert_to_military(cls, time_string: str) -> "MyTime":
+        time_list = time_string.split(" ")
+        hour, minute = time_list[0].split(":")
+        if time_list[1].lower() == "pm":
+            new_hour = int(hour) + 12
+            new_minute = int(minute)
+        else:
+            new_hour = int(hour)
+            new_minute = int(minute)
+        return MyTime(new_hour, new_minute)
+
+
+    @classmethod
     def parse(cls, time_string: str) -> "MyTime":
         hour_str, minute_str = time_string.split(":")
         hour = int(hour_str)
@@ -17,8 +30,6 @@ class MyTime:
         return MyTime(hour, minute)
 
     def time_diff(self, end: "MyTime") -> "MyTime":
-        new_minute = None
-        new_hour = None
         minute_diff = end.minute - self.minute
         if minute_diff < 0:
             new_minute = 60 + minute_diff

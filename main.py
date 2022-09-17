@@ -1,4 +1,3 @@
-from my_time import MyTime
 import test_time
 
 
