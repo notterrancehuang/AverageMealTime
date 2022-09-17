@@ -4,15 +4,19 @@ import os.path
 
 
 class Database:
+    database_file = "times.db"
+
     def __init__(self):
-        self.database_file = "times.db"
-        self.conn = sqlite3.connect(self.database_file)
+        self.conn = sqlite3.connect(Database.database_file)
         self.c = self.conn.cursor()
+
+    def close(self):
+        self.conn.close()
 
     def create_table(self):
         with self.conn:
             if not os.path.exists(self.database_file):
-                self.c.execute("""CREATE TABLE times (
+                self.c.execute("""CREATE TABLE IF NOT EXISTS times (
                             start_hour int,
                             start_minute int,
                             end_hour int,
@@ -33,6 +37,7 @@ class Database:
                                                                 duration.minute))
 
     def get_times(self):
+        # print out whole table
         with self.conn:
             self.c.execute("SELECT * FROM times")
             print(self.c.fetchall())
