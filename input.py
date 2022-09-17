@@ -5,3 +5,9 @@ class Input:
     def get_start_time(cls):
         time_string = input("Enter the start time: ")
         time = MyTime.parse(time_string)
+        return time
+
+    def get_end_time(cls):
+        time_string = input ("enter the end time: ")
+        time = MyTime.parse(time_string)
+        return time
