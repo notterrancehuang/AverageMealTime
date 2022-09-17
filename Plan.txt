@@ -2,14 +2,17 @@ Project plan
 
 Program
     [ ] Functions
-    [ ] Figure out how to connect program to database
+    [x] Figure out how to connect program to database
     [x] parse time string
     [x] convert from normal time to military time
 
 Create database
-    [ ] Input data
+    [x] Input data
     [ ] Delete data
     [ ] Search for certain data (filter by user)
+        [ ] separate table for user and passwords
+        [ ] foreign key for users' data
     [ ] Forms
     [ ] User interactive screen
     [ ] Flask/Dash for visualizing data
+    [ ] Format/display the table (nicely)
