@@ -3,3 +3,4 @@ __pycache__/
 AverageMealTime.iml
 .idea/AverageMealTime.iml
 .idea/misc.xml
+times.db
