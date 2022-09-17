@@ -1,0 +1,13 @@
+Project plan
+
+Program
+    Functions
+    Figure out how to connect program to database
+
+Create database
+    Input data
+    Delete data
+    Search for certain data (filter by user)
+    Forms
+    User interactive screen
+    Flask/Dash for visualizing data
