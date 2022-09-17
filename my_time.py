@@ -31,15 +31,27 @@ class MyTime:
 
     """
     Parse a time string and turn into a time object. For example, 05:00
-    time_string: a string. A 
+    time_string: a string. 
     return: my_time. a time object
     """
     @classmethod
     def parse(cls, time_string: str) -> "MyTime":
+        if MyTime.is_standard_time(time_string):
+            time_string = MyTime.convert_to_military(time_string)
         hour_str, minute_str = time_string.split(":")
         hour = int(hour_str)
         minute = int(minute_str)
         return MyTime(hour, minute)
+
+    """
+     Check whether the time string is in standard time mode.
+     time_string: a string that the user inputs
+     return: whether the time is in standard time mode. 
+    """
+    @classmethod
+    def is_standard_time(cls, time_string: str) -> bool:
+        time_list = time_string.split(" ")
+        return len(time_list) == 2
 
     """
     Compares the time between this and the end time
