@@ -33,4 +33,4 @@ class MyTime:
 
     def __str__(self):
         # TODO 0 filling
-        return str(self.hour) + ":" + str(self.minute)
+        return f"{self.hour:02}" + ":" + f"{self.minute :02}"

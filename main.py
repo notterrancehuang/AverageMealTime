@@ -7,6 +7,7 @@ def main():
     start = MyTime.parse(start_str)
     end = MyTime.parse(end_str)
     diff = start.time_diff(end)
+    print("Difference between " + str(start) + " and " + str(end))
     print(diff)
 
 
