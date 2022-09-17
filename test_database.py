@@ -1,7 +1,6 @@
 import os
 from database import Database
 from my_time import MyTime
-import sqlite3
 
 
 def test():

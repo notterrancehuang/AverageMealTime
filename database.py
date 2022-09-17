@@ -1,13 +1,12 @@
 import sqlite3
 from my_time import MyTime
-import os.path
 
 
 class Database:
 
-    def __init__(self,database_file):
-            self.conn = sqlite3.connect(database_file)
-            self.c = self.conn.cursor()
+    def __init__(self, database_file):
+        self.conn = sqlite3.connect(database_file)
+        self.c = self.conn.cursor()
 
     def close(self):
         self.conn.close()
@@ -32,12 +31,14 @@ class Database:
                                                             duration.hour,
                                                             duration.minute))
         self.conn.commit()
+
     def get_times(self):
         # print out whole table
         self.c.execute("SELECT * FROM times")
         print(self.c.fetchall())
 
     def check_table_exists(self):
-        self.c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='times'")
+        self.c.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='times'")
         test_table_exist = self.c.fetchall()
-        return test_table_exist[0][0] == "times"
+        return test_table_exist
