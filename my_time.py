@@ -4,11 +4,15 @@ class MyTime:
     minute: int. the minutes
     return: time object representing the difference between the two times
     """
-    # hours are in military time (24 hours)
     def __init__(self, hour, minute):
         self.hour = hour
         self.minute = minute
 
+    """
+    Convert from standard time to military time
+    time_string: string with the time and am/pm. 
+    return: a new military time time object 
+    """
     @classmethod
     def convert_to_military(cls, time_string: str) -> "MyTime":
         time_list = time_string.split(" ")
@@ -21,7 +25,11 @@ class MyTime:
             new_minute = int(minute)
         return MyTime(new_hour, new_minute)
 
-
+    """
+    Parse a time string and turn into a time object. For example, 05:00
+    time_string: a string. A 
+    return: my_time. a time object
+    """
     @classmethod
     def parse(cls, time_string: str) -> "MyTime":
         hour_str, minute_str = time_string.split(":")
@@ -29,6 +37,11 @@ class MyTime:
         minute = int(minute_str)
         return MyTime(hour, minute)
 
+    """
+    Compares the time between this and the end time
+    end: the end time of eating the meal
+    return: a time object of the difference between the end and start time. 
+    """
     def time_diff(self, end: "MyTime") -> "MyTime":
         minute_diff = end.minute - self.minute
         if minute_diff < 0:
@@ -42,5 +55,10 @@ class MyTime:
 
         return MyTime(new_hour, new_minute)
 
+    """
+    Overriding the toString and giving a string representation of the time 
+    object. 
+    return: a string representation of the time object. 
+    """
     def __str__(self):
         return f"{self.hour:02}" + ":" + f"{self.minute :02}"
