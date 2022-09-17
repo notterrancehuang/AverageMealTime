@@ -1,5 +1,9 @@
 class MyTime:
     """
+    A class representing time
+    """
+
+    """
     hour: int. hours in military time (24 hours)
     minute: int. the minutes
     return: time object representing the difference between the two times
