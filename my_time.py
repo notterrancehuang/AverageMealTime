@@ -20,17 +20,16 @@ class MyTime:
         new_minute = None
         new_hour = None
         minute_diff = end.minute - self.minute
-        hour_diff = end.hour - self.hour
         if minute_diff < 0:
             new_minute = 60 + minute_diff
-            self.hour -= 1
-            new_hour = hour_diff
+            end.hour -= 1
+            new_hour = end.hour - self.hour
         else:
+            hour_diff = end.hour - self.hour
             new_minute = minute_diff
             new_hour = hour_diff
 
         return MyTime(new_hour, new_minute)
 
     def __str__(self):
-        # TODO 0 filling
         return f"{self.hour:02}" + ":" + f"{self.minute :02}"
