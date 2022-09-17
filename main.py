@@ -3,8 +3,8 @@ import test_database
 
 
 def main():
-    # test_time.test()
-    test_database.test()
+    test_time.test()
+    # test_database.test()
 
 
 if __name__ == "__main__":
