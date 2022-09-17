@@ -37,7 +37,7 @@ class MyTime:
     @classmethod
     def parse(cls, time_string: str) -> "MyTime":
         if MyTime.is_standard_time(time_string):
-            time_string = MyTime.convert_to_military(time_string)
+            return MyTime.convert_to_military(time_string)
         hour_str, minute_str = time_string.split(":")
         hour = int(hour_str)
         minute = int(minute_str)
