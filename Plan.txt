@@ -1,5 +1,7 @@
 Project plan
 
+[ ] README file
+
 Program
     [ ] Functions
     [x] Figure out how to connect program to database
@@ -16,3 +18,4 @@ Create database
     [ ] User interactive screen
     [ ] Flask/Dash for visualizing data
     [ ] Format/display the table (nicely)
+    [ ] command line arguments if there are any. If not, open GUI
