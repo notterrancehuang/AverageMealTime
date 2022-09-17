@@ -3,6 +3,8 @@ Project plan
 Program
     Functions
     Figure out how to connect program to database
+    parse time string
+    convert from normal time to military time
 
 Create database
     Input data
