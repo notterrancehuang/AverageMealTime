@@ -2,9 +2,13 @@ from my_time import MyTime
 
 
 def test():
-    time_string1 = "10:30 PM"
+    time_string1 = "00:00"
     time1 = MyTime.parse(time_string1)
-    time_string2 = "17:59"
-    time2 = MyTime.parse(time_string2)
     print(time1)
+
+    time_string2 = "8:07 pm"
+    time2 = MyTime.parse(time_string2)
     print(time2)
+
+    diff = time1.time_diff(time2)
+    print(diff)
