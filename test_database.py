@@ -8,8 +8,7 @@ def test():
     end = MyTime(11, 00)
     database_file = "times.db"
     db = Database(database_file)
-    if not db.check_table_exists():
-        db.create_table()
+    db.create_table()
     db.insert_data(start, end)
     db.get_times()
     db.close()
