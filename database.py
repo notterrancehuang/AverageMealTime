@@ -36,9 +36,3 @@ class Database:
         # print out whole table
         self.c.execute("SELECT * FROM times")
         print(self.c.fetchall())
-
-    def check_table_exists(self):
-        self.c.execute(
-            "SELECT name FROM sqlite_master WHERE type='table' AND name='times'")
-        test_table_exist = self.c.fetchall()
-        return test_table_exist
