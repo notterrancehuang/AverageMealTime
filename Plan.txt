@@ -8,6 +8,7 @@ Program
     [x] parse time string
         [x] edge case 12 am
     [x] convert from normal time to military time
+    [ ] create folders for each new class so it is easier to find
 
 Create database
     [x] Input data
