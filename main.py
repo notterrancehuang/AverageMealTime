@@ -1,4 +1,4 @@
-from test import test_users
+from tests import test_users
 
 
 def main():
