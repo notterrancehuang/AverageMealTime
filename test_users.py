@@ -1,5 +1,6 @@
 from credentials_database import CredentialsDatabase
 
+
 def test():
     username = "James Bond"
     password = "agentdouble007"

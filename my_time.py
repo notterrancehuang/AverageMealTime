@@ -8,6 +8,7 @@ class MyTime:
     minute: int. the minutes
     return: time object representing the difference between the two times
     """
+
     def __init__(self, hour, minute):
         self.hour = hour
         self.minute = minute
@@ -17,6 +18,7 @@ class MyTime:
     time_string: string with the time and am/pm. 
     return: a new military time time object 
     """
+
     @classmethod
     def convert_to_military(cls, time_string: str) -> "MyTime":
         time_list = time_string.split(" ")
@@ -37,6 +39,7 @@ class MyTime:
     time_string: a string. 
     return: my_time. a time object
     """
+
     @classmethod
     def parse(cls, time_string: str) -> "MyTime":
         if MyTime.is_standard_time(time_string):
@@ -51,6 +54,7 @@ class MyTime:
      time_string: a string that the user inputs
      return: whether the time is in standard time mode. 
     """
+
     @classmethod
     def is_standard_time(cls, time_string: str) -> bool:
         time_list = time_string.split(" ")
@@ -61,6 +65,7 @@ class MyTime:
     end: the end time of eating the meal
     return: a time object of the difference between the end and start time. 
     """
+
     def time_diff(self, end: "MyTime") -> "MyTime":
         minute_diff = end.minute - self.minute
         if minute_diff < 0:
@@ -79,5 +84,6 @@ class MyTime:
     object. 
     return: a string representation of the time object. 
     """
+
     def __str__(self):
         return f"{self.hour:02}" + ":" + f"{self.minute :02}"
