@@ -6,4 +6,5 @@ class Login:
         self.input_password = input_password
 
     def check_validity(self):
-        pass
+        CredentialsDatabase.check_valid_username(self.input_username) and \
+        CredentialsDatabase.check_valid_password(self.input_password)
