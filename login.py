@@ -1,4 +1,4 @@
-from credentials_database import CredentialsDatabase
+from databases.credentials_database import CredentialsDatabase
 
 
 class Login:

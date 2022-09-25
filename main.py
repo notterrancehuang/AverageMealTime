@@ -1,6 +1,4 @@
-import test_time
-import test_database
-import test_users
+from test import test_users
 
 
 def main():

@@ -1,5 +1,4 @@
-import os
-from database import Database
+from databases.database import Database
 from my_time import MyTime
 
 
