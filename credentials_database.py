@@ -25,9 +25,10 @@ class CredentialsDatabase():
         self.c.execute("SELECT * FROM credentials")
         print(self.c.fetchall())
 
-    def check_valid_username(self, input_username: str):
+    def check_valid_username(self, input_username: str) -> bool:
         self.c.execute("SELECT rowid FROM credentials WHERE username = ?", (input_username,))
-        return self.c.fetchone() != None
+        return self.c.fetchone() is not None
 
-    def check_valid_password(self):
-        pass
+    def check_valid_password(self, input_password: str) -> bool:
+        self.c.execute("SELECT rowid FROM credentials WHERE password = ?", (input_password,))
+        return self.c.fetchone() is not None

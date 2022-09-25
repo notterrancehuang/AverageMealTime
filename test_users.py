@@ -6,6 +6,7 @@ def test():
     database_file = "users.db"
     db = CredentialsDatabase(database_file)
     db.create_table()
-    db.insert_data(username,password)
     db.get_data()
+    print(db.check_valid_username(username))
+    print(db.check_valid_password(password))
     db.close()
