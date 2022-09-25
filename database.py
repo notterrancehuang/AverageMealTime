@@ -3,7 +3,6 @@ from my_time import MyTime
 
 
 class Database:
-
     def __init__(self, database_file):
         self.conn = sqlite3.connect(database_file)
         self.c = self.conn.cursor()
@@ -13,6 +12,7 @@ class Database:
 
     def create_table(self):
         self.c.execute("""CREATE TABLE IF NOT EXISTS times (
+                        username text,
                         start_hour int,
                         start_minute int,
                         end_hour int,
@@ -21,15 +21,18 @@ class Database:
                         duration_minute int
                         );""")
 
-    def insert_data(self, start: MyTime, end: MyTime):
+    def insert_data(self, username: str, start: MyTime, end: MyTime):
         duration = start.time_diff(end)
         self.c.execute(
-            "INSERT INTO times VALUES (?, ?, ?, ?, ?, ?)", (start.hour,
-                                                            start.minute,
-                                                            end.hour,
-                                                            end.minute,
-                                                            duration.hour,
-                                                            duration.minute))
+            "INSERT INTO times VALUES (?, ?, ?, ?, ?, ?, ?)", (
+                username,
+                start.hour,
+                start.minute,
+                end.hour,
+                end.minute,
+                duration.hour,
+                duration.minute)
+        )
         self.conn.commit()
 
     def get_times(self):
