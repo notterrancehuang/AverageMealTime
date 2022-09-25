@@ -1,12 +1,12 @@
 Project plan
 
-[ ] README file
+[x] README file
 
 Program
     [ ] Functions
     [x] Figure out how to connect program to database
     [x] parse time string
-        [ ] edge case 12 am
+        [x] edge case 12 am
     [x] convert from normal time to military time
 
 Create database
