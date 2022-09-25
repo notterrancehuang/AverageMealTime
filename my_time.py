@@ -24,6 +24,9 @@ class MyTime:
         if time_list[1].lower() == "pm":
             new_hour = int(hour) + 12
             new_minute = int(minute)
+        elif time_list[1].lower() == "am" and hour == "12":
+            new_hour = 0
+            new_minute = int(minute)
         else:
             new_hour = int(hour)
             new_minute = int(minute)

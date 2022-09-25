@@ -2,7 +2,7 @@ from my_time import MyTime
 
 
 def test():
-    time_string1 = "12:00 am"
+    time_string1 = "12:30 am"
     time1 = MyTime.parse(time_string1)
     print(time1)
 
