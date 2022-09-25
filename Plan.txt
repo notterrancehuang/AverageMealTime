@@ -1,6 +1,6 @@
 Project plan
 
-[ ] README file
+[x] README file
 
 Program
     [ ] Functions
