@@ -21,18 +21,16 @@ class CredentialsDatabase():
         )
         self.conn.commit()
 
-
     def get_data(self):
         self.c.execute("SELECT * FROM credentials")
         print(self.c.fetchall())
 
-    def check_username(self, input_username:str):
+    def check_username(self, input_username: str):
         self.c.execute("""SELECT username
         FROM credentials
         WHERE EXISTS
         (SELECT username FROM credentials)
         """)
-
 
     def check_password(self):
         pass
