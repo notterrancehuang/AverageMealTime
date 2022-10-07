@@ -3,8 +3,8 @@ from login import Login
 
 
 def test():
-    username = "John Smith"
-    password = "password"
+    username = "terrancehuang"
+    password = "doudou"
     database_file = "users.db"
     db = CredentialsDatabase(database_file)
     db.create_table()
