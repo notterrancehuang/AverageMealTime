@@ -39,3 +39,4 @@ class Database:
         # print out whole table
         self.c.execute("SELECT * FROM times")
         print(self.c.fetchall())
+# create delete data function here
