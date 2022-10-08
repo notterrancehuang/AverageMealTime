@@ -7,6 +7,7 @@ class Login:
         self.input_password = input_password
 
     def check_validity(self):
+        # should this be here???? 
         credentials_database = CredentialsDatabase("users.db")
         return credentials_database.check_valid_login(
             self.input_username, self.input_password)

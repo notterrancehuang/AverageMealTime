@@ -3,4 +3,5 @@ __pycache__/
 AverageMealTime.iml
 .idea/AverageMealTime.iml
 .idea/misc.xml
+.idea/sqldialects.xml
 *.db
