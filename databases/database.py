@@ -10,6 +10,9 @@ class Database:
     def close(self):
         self.conn.close()
 
+    def reset_table(self):
+        self.conn.execute("DROP TABLE times")
+
     def create_table(self):
         self.c.execute("""CREATE TABLE IF NOT EXISTS times (
                         username text,
