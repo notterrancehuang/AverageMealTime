@@ -8,6 +8,5 @@ class Login:
 
     def check_validity(self):
         credentials_database = CredentialsDatabase("users.db")
-        return credentials_database.check_valid_username(
-            self.input_username) and credentials_database.check_valid_password(
-            self.input_password)
+        return credentials_database.check_valid_login(
+            self.input_username, self.input_password)

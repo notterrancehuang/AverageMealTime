@@ -21,4 +21,4 @@ Create database
     [ ] Flask/Dash for visualizing data
     [ ] Format/display the table (nicely)
     [ ] command line arguments if there are any. If not, open GUI
-    [ ] password - check if password matches with username
+    [x] password - check if password matches with username
