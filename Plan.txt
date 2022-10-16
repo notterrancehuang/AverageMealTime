@@ -12,7 +12,7 @@ Program
 
 Create database
     [x] Input data
-    [ ] Delete data
+    [x] Delete data
     [ ] Search for certain data (filter by user)
         [ ] separate table for user and passwords
         [ ] foreign key for users' data
