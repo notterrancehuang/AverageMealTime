@@ -19,8 +19,8 @@ class CredentialsDatabase:
         );""")
 
     def insert_data(self, username: str, password: str):
-        hashed = hashlib.sha256(username.encode('utf-8')).hexdigest() + \
-                 hashlib.sha256(password.encode('utf-8')).hexdigest()
+        hashed = hashlib.sha256((username + password).encode(
+            'utf-8')).hexdigest()
         self.c.execute(
             "INSERT INTO credentials VALUES (?)", (hashed,)
         )
@@ -32,9 +32,8 @@ class CredentialsDatabase:
 
     def check_valid_login(self, input_username: str, input_password: str) -> \
             bool:
-        hashed = hashlib.sha256(input_username.encode('utf-8')).hexdigest() + \
-                 hashlib.sha256(
-            input_password.encode('utf-8')).hexdigest()
+        hashed = hashlib.sha256((input_username + input_password).encode(
+            'utf-8')).hexdigest()
         self.c.execute("SELECT rowid FROM credentials WHERE login_hash = ?",
                        (hashed,))
         return self.c.fetchone() is not None
