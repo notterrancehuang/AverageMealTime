@@ -61,4 +61,5 @@ class Database:
         self.c.execute("DELETE FROM times WHERE username = ? AND start_hour = ? AND "
                        "start_minute = ? AND end_hour = ? AND end_minute = ? AND "
                        "duration_hour = ? AND duration_minute = ?", (username,), (start_hour,), (start_minute,),
-                       (end_hour), (end_minute,), (duration_hour,), (duration_minute,))
+                       (end_hour,), (end_minute,), (duration_hour,),
+                       (duration_minute,))
