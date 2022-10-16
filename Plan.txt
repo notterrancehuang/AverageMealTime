@@ -3,7 +3,7 @@ Project plan
 [x] README file
 
 Program
-    [ ] Functions
+    [x] Functions
     [x] Figure out how to connect program to database
     [x] parse time string
         [x] edge case 12 am
