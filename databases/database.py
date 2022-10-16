@@ -48,5 +48,17 @@ class Database:
         print(self.c.fetchall())
 
     # create delete data function here
-    def delete_data(self, username: str):
-        self.c.execute("DELETE FROM times WHERE username = ?", (username,))
+    def delete_data(self, username: str, start_hour: int, start_minute: int,
+                    end_hour: int, end_minute: int,
+                    duration_hour: int, duration_minute: int):
+
+        self.c.execute("SELECT * FROM times WHERE username = ? AND start_hour = ? "
+                       "AND start_minute = ? AND end_hour = ? AND end_minute = ?"
+                       "AND duration_hour = ? AND duration_minute = ?", (username,), (start_hour,),
+                       (start_minute,), (end_hour,), (end_minute,), (duration_hour,), (duration_minute,))
+
+        # look at later
+        self.c.execute("DELETE FROM times WHERE username = ? AND start_hour = ? AND "
+                       "start_minute = ? AND end_hour = ? AND end_minute = ? AND "
+                       "duration_hour = ? AND duration_minute = ?", (username,), (start_hour,), (start_minute,),
+                       (end_hour), (end_minute,), (duration_hour,), (duration_minute,))
