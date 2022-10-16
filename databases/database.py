@@ -42,4 +42,10 @@ class Database:
         # print out whole table
         self.c.execute("SELECT * FROM times")
         print(self.c.fetchall())
+
+    def get_times_from_username(self, username):
+        self.c.execute("SELECT * FROM times WHERE username=?", (username,))
+        print(self.c.fetchall())
+
+
 # create delete data function here
