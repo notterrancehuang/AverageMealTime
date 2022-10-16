@@ -47,7 +47,6 @@ class Database:
         self.c.execute("SELECT * FROM times WHERE username=?", (username,))
         print(self.c.fetchall())
 
-
-# create delete data function here
-    def delete_data(self,username: str):
-        self.c.execute("DELETE FROM times WHERE username = ?", (str,))
+    # create delete data function here
+    def delete_data(self, username: str):
+        self.c.execute("DELETE FROM times WHERE username = ?", (username,))
