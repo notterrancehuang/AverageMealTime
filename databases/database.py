@@ -49,3 +49,5 @@ class Database:
 
 
 # create delete data function here
+    def delete_data(self,username: str):
+        self.c.execute("DELETE FROM times WHERE username = ?", (str,))
